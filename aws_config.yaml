@@ -6,7 +6,7 @@ Resources:
     Type: AWS::CloudFront::CloudFrontOriginAccessIdentity
     Properties:
       CloudFrontOriginAccessIdentityConfig:
-        Comment: origin-access-alpacked
+        Comment: origin-access-xxxxxx
   # Certificate:
   #   Type: AWS::CertificateManager::Certificate
   #   Properties:
@@ -16,7 +16,7 @@ Resources:
     Type: AWS::S3::Bucket
     Properties:
       AccessControl: Private
-      BucketName: alpacked-website
+      BucketName: xxxxxx-website
       PublicAccessBlockConfiguration:
         BlockPublicAcls: 'true'
         BlockPublicPolicy: 'true'
@@ -53,7 +53,7 @@ Resources:
     Properties:
       DistributionConfig:
         Aliases:
-          - alpacked.io
+          - xxxxxxx.io
         DefaultCacheBehavior:
           AllowedMethods:
             - DELETE
@@ -79,7 +79,7 @@ Resources:
         IPV6Enabled: 'true'
         # Logging:
         #   IncludeCookies: 'false'
-        #   Bucket: alpacked-website
+        #   Bucket: xxxxxx-website
         #   Prefix: logs
         Origins:
           - DomainName:
@@ -266,7 +266,7 @@ Resources:
         Uri:
           Fn::Join:
             - ''
-            - - 'arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/'
+            - - 'arn:aws:apigateway:xxxxxxx:lambda:path/2015-03-31/xxxxxxx/'
               - Fn::GetAtt:
                 - LambdaInvokeFunction
                 - Arn
